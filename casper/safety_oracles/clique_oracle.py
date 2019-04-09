@@ -16,7 +16,7 @@ class CliqueOracle(AbstractOracle):
         self.candidate_estimate = candidate_estimate
         self.view = view
         self.validator_set = validator_set
-        # Only consider validators whose messages are compatable w/ candidate_estimate.
+        # Only consider validators whose messages are compatible w/ candidate_estimate.
         self.with_candidate = {
             v for v in self.validator_set if v in self.view.latest_messages and
             not self.candidate_estimate.conflicts_with(self.view.latest_messages[v])
